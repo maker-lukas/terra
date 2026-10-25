@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c1w4psprnolxk"]
+
+[ext_resource type="Script" uid="uid://bh4fl8ccvsjka" path="res://player_test.gd" id="1_xys6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poog2"]
+size = Vector2(14, 14)
+
+[node name="Node2D" type="CharacterBody2D" unique_id=1536243958]
+script = ExtResource("1_xys6k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=734183914]
+shape = SubResource("RectangleShape2D_poog2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1322484511]
