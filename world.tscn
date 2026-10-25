@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://baterbkbjsocg"]
 
 [ext_resource type="PackedScene" uid="uid://c1w4psprnolxk" path="res://player_test.tscn" id="1_f3sb7"]
+[ext_resource type="AudioStream" uid="uid://ikvluo0im0ja" path="res://STARDUST_PHARMACY.ogg" id="2_tlwt5"]
+[ext_resource type="Script" uid="uid://bg8cyeff560ks" path="res://Conductor.gd" id="3_aqk2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_poog2"]
-size = Vector2(1000, 10)
+size = Vector2(10000, 10)
 
 [node name="World" type="Node2D" unique_id=1348533836]
 
@@ -12,5 +14,14 @@ size = Vector2(1000, 10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=952482091]
 shape = SubResource("RectangleShape2D_poog2")
 
-[node name="Node2D" parent="." unique_id=1536243958 instance=ExtResource("1_f3sb7")]
-position = Vector2(-488, -26)
+[node name="Player" parent="." unique_id=1536243958 node_paths=PackedStringArray("conductor") instance=ExtResource("1_f3sb7")]
+position = Vector2(-4989, -25)
+conductor = NodePath("../Conductor")
+
+[node name="Conductor" type="AudioStreamPlayer" parent="." unique_id=336584911]
+stream = ExtResource("2_tlwt5")
+autoplay = true
+script = ExtResource("3_aqk2v")
+bpm = 142.0
+first_beat_offset = 13.0
+metadata/_custom_type_script = "uid://bg8cyeff560ks"
