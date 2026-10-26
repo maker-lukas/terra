@@ -1,12 +1,13 @@
 # Cyberpunk rhythm platformer
-> A game where your purpose is to hit, jump, dodge: enemies, obstacles in a fun rhythym gamemode
+> A game where your purpose is to hit, jump, dodge: enemies, obstacles in a fun rhythm gamemode
 
-How to play:
+**How to play:**
 
-- Open it at [itch.io](https://itch.io/)
+- Open it at [itch.io](https://orangopontotango.itch.io/cyberpunk-rhythym-game)
 - Click play
 - You will be in the idle state for 13 seconds and then you start running where you can:
-    - Jump with Space Bar
+	- Jump with variable heights with the Space Bar
 
+![gameplay](gameplay.gif)
 
-made in Godot.
+made with <3 and struggle in Godot.
