@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yla6tag7tf73" path="res://assets/run-Sheet.png" id="2_mnirw"]
 [ext_resource type="Texture2D" uid="uid://buwkrgbdfnx1x" path="res://assets/idle-Sheet.png" id="3_psp7o"]
 [ext_resource type="Texture2D" uid="uid://c6rpjhp1xswcs" path="res://assets/jump-Sheet.png" id="3_wln50"]
+[ext_resource type="Texture2D" uid="uid://clf5ia6cgr4jq" path="res://assets/slide-Sheet.png" id="5_wln50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psp7o"]
 size = Vector2(10, 26)
@@ -116,6 +117,38 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("2_mnirw")
 region = Rect2(336, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jivb"]
+atlas = ExtResource("5_wln50")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbmnv"]
+atlas = ExtResource("5_wln50")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iff2d"]
+atlas = ExtResource("5_wln50")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6nld"]
+atlas = ExtResource("5_wln50")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oilbj"]
+atlas = ExtResource("5_wln50")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie1q6"]
+atlas = ExtResource("5_wln50")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajjy1"]
+atlas = ExtResource("5_wln50")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rfgv"]
+atlas = ExtResource("5_wln50")
+region = Rect2(336, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_poog2"]
 animations = [{
 "frames": [{
@@ -218,6 +251,35 @@ animations = [{
 "loop": 1,
 "name": &"Run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jivb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbmnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iff2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6nld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oilbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie1q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajjy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rfgv")
+}],
+"loop": 1,
+"name": &"Slide",
+"speed": 12.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1536243958]
@@ -231,9 +293,10 @@ shape = SubResource("RectangleShape2D_psp7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=909458821]
 sprite_frames = SubResource("SpriteFrames_poog2")
-animation = &"Idle"
+animation = &"Slide"
 autoplay = "Idle"
-frame_progress = 0.016460355
+frame = 2
+frame_progress = 0.5265534
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1322484511]
 
