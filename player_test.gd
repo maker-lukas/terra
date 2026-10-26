@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var camera: Camera2D = $Camera2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var conductor: Conductor
 
 @export_group("Beat timing")
@@ -75,9 +77,18 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_released("Jump") and velocity.y < 0.0:
 		velocity.y *= jump_cut_multiplier
 	
-	
 	move_and_slide()
 	camera.global_position.x = global_position.x
+	
+	if not is_on_floor():
+		if animated_sprite.animation != "Jump":
+			animated_sprite.play("Jump")
+	elif absf(velocity.x) > 1.0:
+		if animated_sprite.animation != "Run":
+			animated_sprite.play("Run")
+	else:
+		if animated_sprite.animation != "Idle":
+			animated_sprite.play("Idle")
 	
 	if _in_jump:
 		_jump_air_time += delta
