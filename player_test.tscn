@@ -7,6 +7,8 @@ size = Vector2(14, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=1536243958]
 script = ExtResource("1_xys6k")
+jump_air_beats = 1.5
+jump_height = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=734183914]
 shape = SubResource("RectangleShape2D_poog2")

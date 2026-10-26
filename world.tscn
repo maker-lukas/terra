@@ -23,5 +23,5 @@ stream = ExtResource("2_tlwt5")
 autoplay = true
 script = ExtResource("3_aqk2v")
 bpm = 142.0
-first_beat_offset = 13.0
+first_beat_offset = 13.5
 metadata/_custom_type_script = "uid://bg8cyeff560ks"
