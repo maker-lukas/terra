@@ -8,6 +8,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psp7o"]
 size = Vector2(10, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubtck"]
+atlas = ExtResource("3_wln50")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c8uf"]
+atlas = ExtResource("3_wln50")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cno25"]
+atlas = ExtResource("3_wln50")
+region = Rect2(240, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4x0g2"]
 atlas = ExtResource("3_psp7o")
 region = Rect2(0, 0, 48, 48)
@@ -106,10 +118,19 @@ region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poog2"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubtck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c8uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cno25")
+}],
 "loop": 1,
 "name": &"Fall",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -144,7 +165,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 7.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,10 +231,9 @@ shape = SubResource("RectangleShape2D_psp7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=909458821]
 sprite_frames = SubResource("SpriteFrames_poog2")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 3
-frame_progress = 0.42875737
+frame_progress = 0.016460355
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1322484511]
 
