@@ -14,7 +14,6 @@ config/name="terra"
 run/main_scene="uid://baterbkbjsocg"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
-config/icon="res://icon.svg"
 
 [display]
 

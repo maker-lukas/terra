@@ -13,6 +13,7 @@ extends CharacterBody2D
 @export var jump_height: float = 50.0
 @export_range(0.0, 1.0) var jump_cut_multiplier: float = 0.5
 @export var debug_print_jumps: bool = true
+@export var beats_per_run_cycle: float = 2.0
 
 var speed: float
 var jump_velocity: float
@@ -80,15 +81,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	camera.global_position.x = global_position.x
 	
-	if not is_on_floor():
+	animated_sprite.speed_scale = 1.0
+	
+	if  not is_on_floor():
 		if animated_sprite.animation != "Jump":
 			animated_sprite.play("Jump")
 	elif absf(velocity.x) > 1.0:
 		if animated_sprite.animation != "Run":
 			animated_sprite.play("Run")
+			_align_run_to_beat()
+		_sync_run_to_tempo()
 	else:
 		if animated_sprite.animation != "Idle":
 			animated_sprite.play("Idle")
+	
 	
 	if _in_jump:
 		_jump_air_time += delta
@@ -98,3 +104,22 @@ func _physics_process(delta: float) -> void:
 			if debug_print_jumps:
 				print("Jump: %.2f beats (%.2fs), %.0f px high" % [
 					_jump_air_time / _seconds_per_beat, _jump_air_time, _jump_peak])
+
+func _play(anim: StringName) -> void:
+	if animated_sprite.animation != anim:
+		animated_sprite.play(anim)
+
+func _sync_run_to_tempo() -> void:
+	var frames := animated_sprite.sprite_frames
+	var natural_length := frames.get_frame_count("Run") / frames.get_animation_speed("Run")
+	var wanted_length := beats_per_run_cycle * _seconds_per_beat
+	animated_sprite.speed_scale = natural_length / wanted_length
+
+func _align_run_to_beat() -> void:
+	if not conductor:
+		return
+	var cycle := beats_per_run_cycle * _seconds_per_beat
+	var phase := fposmod(conductor.get_song_position() / cycle, 1.0)
+	var count := animated_sprite.sprite_frames.get_frame_count("Run")
+	animated_sprite.frame = int(phase * count) % count
+ 

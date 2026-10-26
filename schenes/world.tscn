@@ -22,7 +22,7 @@ offset_bottom = 5.0
 color = Color(1, 0.3882353, 1, 1)
 
 [node name="Player" parent="." unique_id=1536243958 node_paths=PackedStringArray("conductor") instance=ExtResource("1_f3sb7")]
-position = Vector2(-4989, -25)
+position = Vector2(-4989, -21)
 conductor = NodePath("../Conductor")
 
 [node name="Conductor" type="AudioStreamPlayer" parent="." unique_id=336584911]
