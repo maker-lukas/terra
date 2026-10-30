@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yla6tag7tf73" path="res://assets/run-Sheet.png" id="2_mnirw"]
 [ext_resource type="Texture2D" uid="uid://buwkrgbdfnx1x" path="res://assets/idle-Sheet.png" id="3_psp7o"]
 [ext_resource type="Texture2D" uid="uid://c6rpjhp1xswcs" path="res://assets/jump-Sheet.png" id="3_wln50"]
+[ext_resource type="Texture2D" uid="uid://ccxwyvyltypnm" path="res://assets/land-Sheet.png" id="4_t3an5"]
 [ext_resource type="Texture2D" uid="uid://clf5ia6cgr4jq" path="res://assets/slide-Sheet.png" id="5_wln50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psp7o"]
@@ -84,6 +85,42 @@ region = Rect2(192, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kx0x"]
 atlas = ExtResource("3_wln50")
 region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsy2q"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk74b"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0d68"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hx2u"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4gy1"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg4gs"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l8j1"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovbld"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbg38"]
+atlas = ExtResource("4_t3an5")
+region = Rect2(384, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psp7o"]
 atlas = ExtResource("2_mnirw")
@@ -225,6 +262,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tsy2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk74b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0d68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hx2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4gy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg4gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l8j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovbld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbg38")
+}],
+"loop": 0,
+"name": &"Land",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_psp7o")
 }, {
 "duration": 1.0,
@@ -295,11 +364,13 @@ shape = SubResource("RectangleShape2D_psp7o")
 sprite_frames = SubResource("SpriteFrames_poog2")
 animation = &"Slide"
 autoplay = "Idle"
-frame = 2
-frame_progress = 0.5265534
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1322484511]
 
 [node name="JumpBufferTimer" type="Timer" parent="." unique_id=797727824]
+wait_time = 0.1
+one_shot = true
+
+[node name="SlideBufferTimer" type="Timer" parent="." unique_id=1511043486]
 wait_time = 0.1
 one_shot = true
