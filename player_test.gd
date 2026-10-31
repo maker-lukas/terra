@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
