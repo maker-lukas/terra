@@ -11,7 +11,7 @@ extends CharacterBody2D
 
 @export_group("Slide")
 @export var slide_min_beats: float = 0.5
-@export var slide_max_beats: float = 1.8
+@export var slide_max_beats: float = 1.5
 @export_range(0.1, 1.0) var slide_collision_scale: float = 0.5
 
 @export_group("Beat timing")
@@ -99,7 +99,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_released("Jump") and velocity.y < 0.0:
 		velocity.y *= jump_cut_multiplier
 	
-	if not jumped and not _sliding and is_on_floor() and not slide_buffer_timer.is_stopped():
+	if not jumped and not _sliding and is_on_floor() and _is_running() and not slide_buffer_timer.is_stopped():
 		slide_buffer_timer.stop()
 		_start_slide()
 	
@@ -176,3 +176,6 @@ func _slide_should_end() -> bool:
 	if _slide_time >= max_time or not is_on_floor():
 		return true
 	return _slide_time >= min_time and not Input.is_action_pressed("Slide")
+
+func _is_running() -> bool:
+	return absf(velocity.x) > 1.0
