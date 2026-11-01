@@ -23,6 +23,7 @@ extends CharacterBody2D
 @export var debug_print_jumps: bool = true
 @export var beats_per_run_cycle: float = 2.0
 
+
 var speed: float
 var jump_velocity: float
 var gravity: float
@@ -62,6 +63,8 @@ func _update_beat_physics() -> void:
 
 
 func _ready() -> void:
+	add_to_group("player")
+	
 	_start_x = global_position.x
 	camera.top_level = true
 	camera.global_position = global_position

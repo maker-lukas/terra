@@ -363,7 +363,7 @@ shape = SubResource("RectangleShape2D_psp7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=909458821]
 sprite_frames = SubResource("SpriteFrames_poog2")
-animation = &"Slide"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1322484511]
