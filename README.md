@@ -1,5 +1,5 @@
 # Cyberpunk rhythm platformer
-> A game where your purpose is to hit, jump, dodge: enemies, obstacles in a fun rhythm gamemode
+> A cyberpunk rhythm platformer with parkour and enemies where you have to hit, dash,  jump on beat of the song with aggressive music like breakcore / dnb
 
 **How to play:**
 
@@ -9,6 +9,8 @@
 	- Jump with variable heights with the Space Bar
 	- Slide with variable length with Shift key
 	- Die and respawn
+
+The game is still very simple as this is my first game ever and I'm a really beginer on gamedev so uhh development is really slow 
 
 ![gameplay](gameplay.gif)
 
