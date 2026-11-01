@@ -7,6 +7,8 @@
 - Click play
 - You will be in the idle state for 13 seconds and then you start running where you can:
 	- Jump with variable heights with the Space Bar
+	- Slide with variable length with Shift key
+	- Die and respawn
 
 ![gameplay](gameplay.gif)
 
